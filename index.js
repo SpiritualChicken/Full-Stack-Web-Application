@@ -1,19 +1,14 @@
-fetch('https://api.spacexdata.com/v5/launches/latest')
-    .then((resp) => resp.json())
-    .then((data) => console.log(data))
+let input = document.querySelector('#input-box');
+let button = document.querySelector('#search-button');
+let displayContainer = document.querySelector('#display-container');
+let listContainer = document.querySelector('#search-list');
+let ts = '1694160786735'
+let publicKey = ""
+let hashVal = ""
 
-async function fetchSpace() {
-    const res = await fetch('https://api.spacexdata.com/v5/launches/latest')
-    const data = await res.json()
-    renderSpace(data);
-}
+let date = new Date();
+console.log(date.getTime());
 
-function renderSpace(space) {
-    const main = document.querySelector('main')
-    const div =
-}
+const [timestamp, apiKey, hashValue] = [ts, apiKeyVal, hashVal]
 
-fetchSpace();
-
-
-// https://www.youtube.com/watch?v=8se1rBs--4A&list=PLNCevxogE3fiLT6bEObGeVfHVLnttptKv&index=16&ab_channel=CodingArtist
+// https://www.youtube.com/watch?v=8se1rBs--4A&list=PLNCevxogE3fiLT6bEObGeVfHVLnttptKv&index=16&ab_channel=CodingArtist 
