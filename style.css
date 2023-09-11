@@ -47,7 +47,7 @@ button{
     border-radius: 0.5em;
 }
 
-.display-container {
+#display-container {
     padding: 1em ;
 }
 .container-character-image {
@@ -90,5 +90,12 @@ button{
 
 .list {
     position: absolute;
-    
 }
+
+.autocomplete-items {
+    padding: 0.5em;
+  }
+  .autocomplete-items:hover {
+    background-color: #ddd;
+    color: #171821;
+  }
