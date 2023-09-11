@@ -2,6 +2,7 @@ let input = document.querySelector('#input');
 let button = document.querySelector('#search-button');
 let displayContainer = document.querySelector('#display-container');
 let listContainer = document.querySelector('#search-list');
+let heroIndex = document.querySelector('#hero-index');
 
 
 let ts = '1694407684017'
@@ -94,8 +95,8 @@ async function fetchSuperHero() {
 
         div.append(img, name)
        
-        const heroIndex = document.querySelector('#hero-index')
-        heroIndex.appendChild(div)
+        heroIndex.append(div)
+        
     
         })
     }
