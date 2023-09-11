@@ -2,6 +2,8 @@ let input = document.querySelector('#input');
 let button = document.querySelector('#search-button');
 let displayContainer = document.querySelector('#display-container');
 let listContainer = document.querySelector('#search-list');
+
+
 let ts = '1694407684017'
 let publicKey = "7086793dcb0eb11d2088ebb2002b331f"
 let hashVal = "ccd2f5cca242e00a60e48ca8bd62cc16"
@@ -20,7 +22,7 @@ function displayWords(value) {
   function removeElements() {
     listContainer.innerHTML = "";
   }
-  
+
   input.addEventListener("keyup", async () => {
     removeElements();
     if (input.value.length < 4) {
@@ -71,8 +73,37 @@ button.addEventListener(
     getRsult();
   };
 
- 
- 
+
+  // list superhero index
+async function fetchSuperHero() {
+    const url = `https://gateway.marvel.com:443/v1/public/characters?ts=${timestamp}&apikey=${apiKey}&hash=${hashValue}`;
+    const response = await fetch(url);
+    const jsonData = await response.json(); 
+    let heroIndex = document.querySelector('#hero-index')
+    const ul = document.createElement('ul')
+
+    jsonData.data["results"].forEach((element) => {
+        console.log(element)
+        const div = document.createElement('div')
+        div.className = "hero-card";
+        const img = document.createElement('img')
+            img.src = `${element.thumbnail["path"] + "." + element.thumbnail["extension"]}`
+            img.alt = element.name
+        const name = document.createElement('p')
+        name.className = "character-name"
+
+        div.append(img, name)
+       
+        const heroIndex = document.querySelector('#hero-index')
+        heroIndex.appendChild(div)
+    
+        })
+    }
+    
+
+fetchSuperHero()
+
+
 
 // https://www.youtube.com/watch?v=8se1rBs--4A&list=PLNCevxogE3fiLT6bEObGeVfHVLnttptKv&index=16&ab_channel=CodingArtist 
 // public key: "7086793dcb0eb11d2088ebb2002b331f
