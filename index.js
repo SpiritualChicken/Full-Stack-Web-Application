@@ -76,35 +76,31 @@ button.addEventListener(
 
 
   // list superhero index
-async function fetchSuperHero() {
+  async function fetchSuperHero() {
     const url = `https://gateway.marvel.com:443/v1/public/characters?ts=${timestamp}&apikey=${apiKey}&hash=${hashValue}`;
     const response = await fetch(url);
     const jsonData = await response.json(); 
-    let heroIndex = document.querySelector('#hero-index')
-    const ul = document.createElement('ul')
+    const heroGrid = document.querySelector('#hero-grid'); // Assuming you have a container with the id "hero-grid"
 
     jsonData.data["results"].forEach((element) => {
-        console.log(element)
-        const div = document.createElement('div')
-        div.className = "hero-card";
-        const img = document.createElement('img')
-            img.src = `${element.thumbnail["path"] + "." + element.thumbnail["extension"]}`
-            img.alt = element.name
-        const name = document.createElement('p')
-        name.className = "character-name"
-
-        div.append(img, name)
-       
-        heroIndex.append(div)
+        const card = document.createElement('div');
+        card.className = "hero-card";
         
-    
-        })
-    }
-    
+        const img = document.createElement('img');
+        img.src = `${element.thumbnail["path"] + "." + element.thumbnail["extension"]}`;
+        img.alt = element.name;
+        img.className = "index-img";
+        
+        const name = document.createElement('p');
+        name.innerHTML = element.name;
+        name.className = "character-name";
 
-fetchSuperHero()
+        card.append(img, name);
+        heroGrid.append(card);
+    });
+}
 
-
+fetchSuperHero();
 
 // https://www.youtube.com/watch?v=8se1rBs--4A&list=PLNCevxogE3fiLT6bEObGeVfHVLnttptKv&index=16&ab_channel=CodingArtist 
 // public key: "7086793dcb0eb11d2088ebb2002b331f

@@ -7,7 +7,12 @@ html{
 
 body {
     background-color: red;
+
 }
+
+#input-container {
+    margin-bottom: 20px;
+  }
 
 #search {
     background-color: #171821;
@@ -23,6 +28,10 @@ body {
     top: 1em;
     border-radius: 1em;
     padding-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; 
 }
 
 #input-box {
@@ -47,6 +56,7 @@ button{
     border-radius: 0.5em;
 }
 
+
 #display-container {
     padding: 1em ;
 }
@@ -70,6 +80,18 @@ button{
     position: relative;
     width: block;
     border-radius: 50%;
+}
+
+.index-img {
+    width: 20%;
+    position: relative;
+    border-radius: 50%;
+    background-color: white;
+    padding: 0.5em;
+    height: 9.5em;
+    width: 9.5em;
+    display: block;
+    margin: auto;
 }
 
 .character-name {
@@ -98,4 +120,50 @@ button{
   .autocomplete-items:hover {
     background-color: #ddd;
     color: #171821;
+  }
+
+  #hero-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    justify-content: center;
+    position: relative;
+    top: 600px;
+  }
+  
+  
+  .hero-card {
+    background-color: #171821;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    border-radius: 10px;
+  }
+  
+  .hero-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .index-img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .character-name {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .character-description {
+    margin-top: 10px;
+  }
+  
+ 
+  #hero-grid::after {
+    content: "";
+    clear: both;
+    display: table;
   }
