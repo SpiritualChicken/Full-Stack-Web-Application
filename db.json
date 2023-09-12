@@ -1,9 +1,14 @@
 {
-    "popularSearches": [
+    "avengers": [
         "Iron Man",
         "Spider-Man",
         "Captain America",
         "Thor",
-        "Black Widow"
+        "Black Widow",
+        "Black Panther",
+        "Hawkeye",
+        "Nick Fury",
+        "Thanos",
+        "Wasp"
       ]
 }

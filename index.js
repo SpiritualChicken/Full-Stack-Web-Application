@@ -101,56 +101,11 @@ button.addEventListener(
 }
 
 fetchSuperHero();
-/////////////////////////////////////////
-function displayHeroDetails(heroId) {
-  const url = `https://gateway.marvel.com:443/v1/public/characters/${heroId}?ts=${timestamp}&apikey=${apiKey}&hash=${hashValue}`;
-  
-  fetch(url)
-    .then((response) => response.json())
-    .then((jsonData) => {
-      const hero = jsonData.data.results[0];
-      if (hero) {
-        const cardContainer = document.createElement("div");
-        cardContainer.className = "card-container";
 
-        const card = document.createElement("div");
-        card.className = "hero-card";
 
-        const img = document.createElement("img");
-        img.src = `${hero.thumbnail.path}.${hero.thumbnail.extension}`;
-        img.alt = hero.name;
-        img.className = "character-image";
+///Filter section
 
-        const name = document.createElement("div");
-        name.innerHTML = hero.name;
-        name.className = "character-name";
 
-        const description = document.createElement("div");
-        description.innerHTML = hero.description;
-        description.className = "character-description";
-
-        card.append(img, name, description);
-        cardContainer.appendChild(card);
-
-        // Clear previous results and display the hero details
-        displayContainer.innerHTML = "";
-        displayContainer.appendChild(cardContainer);
-      }
-    })
-    .catch((error) => {
-      console.error("Error fetching hero details:", error);
-    });
-}
-
-// Event delegation to handle clicks on hero cards
-document.addEventListener("click", (event) => {
-  if (event.target.classList.contains("hero-card")) {
-    const heroId = event.target.getAttribute("data-hero-id");
-    if (heroId) {
-      displayHeroDetails(heroId);
-    }
-  }
-});
 // https://www.youtube.com/watch?v=8se1rBs--4A&list=PLNCevxogE3fiLT6bEObGeVfHVLnttptKv&index=16&ab_channel=CodingArtist 
 // public key: "7086793dcb0eb11d2088ebb2002b331f
 // private key: "5fe433ed0d3f5aa5ef255cdda722446877aa2a57"
