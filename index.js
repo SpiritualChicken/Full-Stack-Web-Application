@@ -166,10 +166,3 @@ teamSelect.addEventListener('change', function () {
 
 
 
-
-
-
-
-// public key: "7086793dcb0eb11d2088ebb2002b331f
-// private key: "5fe433ed0d3f5aa5ef255cdda722446877aa2a57"
-
