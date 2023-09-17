@@ -33,3 +33,5 @@ Avengers Filter:
 Acknowledgments:
 - This project uses the Marvel API to fetch Marvel character data.
 - This website was built using Javascript, HTML and CSS.
+
+Thank you for using the Marvel Character Search website! Explore the Marvel Universe with ease.
