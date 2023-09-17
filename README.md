@@ -30,3 +30,6 @@ Avengers Filter:
 - The index should then change and display a list of 10 Avengers.
 - This feature uses the "change" event type.
 
+Acknowledgments:
+- This project uses the Marvel API to fetch Marvel character data.
+- This website was built using Javascript, HTML and CSS.
