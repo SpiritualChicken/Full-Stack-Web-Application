@@ -8,6 +8,7 @@ This is a simple web application that allows users to search for Marvel characte
 - Filter for a list of the Avengers heros.
 
 **Usage**
+
 Searching for Marvel Heros :
 - On the home page, enter the name of the Marvel character you want to search for in the search bar.
 - Click the "Search" button or press "Enter."
